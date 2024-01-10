@@ -41,14 +41,15 @@
                         <type>remote</type>
                     </container>
                     <configuration>
-                        <type>runtime</type>
-                        <properties>
-                            <cargo.remote.username>admin</cargo.remote.username>
-                            <cargo.remote.password>1234</cargo.remote.password>
-                            <cargo.hostname>localhost</cargo.hostname>
-                            <cargo.servlet.port>8090</cargo.servlet.port>
-                        </properties>
-                    </configuration>
+    <properties>
+        <cargo.hostname>localhost</cargo.hostname>
+        <cargo.servlet.port>8080</cargo.servlet.port>
+        <cargo.tomcat.manager.url>http://localhost:8080/manager/text</cargo.tomcat.manager.url>
+        <cargo.remote.username>admin</cargo.remote.username>
+        <cargo.remote.password>1234</cargo.remote.password>
+    </properties>
+</configuration>
+
                     <deployer>
                         <type>remote</type>
                     </deployer>
