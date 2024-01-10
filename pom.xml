@@ -43,10 +43,10 @@
                     <configuration>
                         <type>runtime</type>
                         <properties>
-                            <cargo.remote.username>yourTomcatUsername</cargo.remote.username>
-                            <cargo.remote.password>yourTomcatPassword</cargo.remote.password>
-                            <cargo.hostname>yourTomcatHostname</cargo.hostname>
-                            <cargo.servlet.port>yourTomcatPort</cargo.servlet.port>
+                            <cargo.remote.username>admin</cargo.remote.username>
+                            <cargo.remote.password>1234</cargo.remote.password>
+                            <cargo.hostname>localhost</cargo.hostname>
+                            <cargo.servlet.port>8090</cargo.servlet.port>
                         </properties>
                     </configuration>
                     <deployer>
