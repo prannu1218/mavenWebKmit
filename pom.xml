@@ -30,7 +30,33 @@
     <build>
         <finalName>mavenWeb</finalName>
         <plugins>
-            <!-- Add the Cargo plugin for deployment -->
+            <!-- Maven plugins for build lifecycle -->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <!-- Exclude XML files from the WAR -->
+                    <packagingExcludes>WEB-INF/web.xml</packagingExcludes>
+                </configuration>
+            </plugin>
+
+            <!-- Cargo plugin for deployment -->
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven2-plugin</artifactId>
@@ -46,15 +72,13 @@
                             <cargo.remote.username>admin</cargo.remote.username>
                             <cargo.remote.password>1234</cargo.remote.password>
                             <cargo.hostname>localhost</cargo.hostname>
-                            <cargo.servlet.port>8080</cargo.servlet.port>
-                            <!-- Additional configuration if needed -->
-                            <!-- <cargo.servlet.uri>/manager/text</cargo.servlet.uri> -->
+                            <cargo.servlet.port>8068</cargo.servlet.port>
                         </properties>
                     </configuration>
                     <deployer>
                         <type>remote</type>
                     </deployer>
-                    <!-- Exclude the pom.xml file from deployment -->
+                    <!-- Exclude specific files or file patterns from deployment -->
                     <deployables>
                         <deployable>
                             <groupId>in.kmit</groupId>
@@ -63,6 +87,9 @@
                             <properties>
                                 <context>/mavenWeb</context>
                             </properties>
+                            <excludes>
+                                <exclude>**/*.xml</exclude>
+                            </excludes>
                         </deployable>
                     </deployables>
                 </configuration>
@@ -75,6 +102,16 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- Maven plugins for installation and deployment -->
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
             </plugin>
         </plugins>
     </build>
