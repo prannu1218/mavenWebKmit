@@ -34,7 +34,7 @@
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven2-plugin</artifactId>
-                <version>1.8.3</version>
+                <version>1.8.4</version>
                 <configuration>
                     <container>
                         <containerId>tomcat9x</containerId>
@@ -47,6 +47,8 @@
                             <cargo.remote.password>1234</cargo.remote.password>
                             <cargo.hostname>localhost</cargo.hostname>
                             <cargo.servlet.port>8080</cargo.servlet.port>
+                            <!-- Additional configuration if needed -->
+                            <!-- <cargo.servlet.uri>/manager/text</cargo.servlet.uri> -->
                         </properties>
                     </configuration>
                     <deployer>
