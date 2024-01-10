@@ -46,7 +46,7 @@
                             <cargo.remote.username>admin</cargo.remote.username>
                             <cargo.remote.password>1234</cargo.remote.password>
                             <cargo.hostname>localhost</cargo.hostname>
-                            <cargo.servlet.port>8090</cargo.servlet.port>
+                            <cargo.servlet.port>8080</cargo.servlet.port>
                         </properties>
                     </configuration>
                     <deployer>
